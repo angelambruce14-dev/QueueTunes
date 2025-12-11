@@ -1,0 +1,50 @@
+{
+  "Chill Vibes": [
+    {
+      "title": "Lavender Dreams",
+      "artist_name": "Arielle Moon",
+      "genre": "Indie",
+      "duration": "3:21"
+    },
+    {
+      "title": "Sundown Glow",
+      "artist_name": "Luna Waves",
+      "genre": "LoFi",
+      "duration": "2:45"
+    }
+  ],
+  "Study Mode": [
+    {
+      "title": "Focus Drift",
+      "artist_name": "Nox",
+      "genre": "Ambient",
+      "duration": "4:10"
+    },
+    {
+      "title": "Soft Static",
+      "artist_name": "Grey Minds",
+      "genre": "Electronic",
+      "duration": "3:58"
+    }
+  ],
+  "RnB Essentials": [
+    {
+      "title": "Honey Drip",
+      "artist_name": "Sarai Blu",
+      "genre": "R&B",
+      "duration": "3:40"
+    },
+    {
+      "title": "Late Night",
+      "artist_name": "Marcell",
+      "genre": "R&B",
+      "duration": "3:09"
+    },
+    {
+      "title": "You and I",
+      "artist_name": "Stevie Wonder",
+      "genre": "R&B",
+      "duration": "4:25"
+    }
+  ]
+}

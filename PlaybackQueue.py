@@ -43,7 +43,7 @@ class PlaybackQueue:
 
         else:
             self.tail.next = new_node
-            new_node.previous = self.tail
+            new_node.prev = self.tail
             self.tail = new_node
 
         self.size += 1
@@ -153,4 +153,8 @@ class PlaybackQueue:
                 self.current = predecessor
         self.size -=1
 
-
+    def clear(self):
+        self.head=None
+        self.tail = None
+        self.current=None
+        self.size = 0
