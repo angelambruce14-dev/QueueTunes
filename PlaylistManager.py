@@ -6,7 +6,7 @@ class PlaylistManager:
 
     def create_playlist(self, name):
         if name is None or name in self.playlists:
-            return
+            pass
 
         else:
             new_playlist = Playlist(name)
@@ -25,7 +25,9 @@ class PlaylistManager:
         else:
             return None
 
-    def get_all_playlist_name(self):
-        return list(self.playlists.keys())
+   #def get_all_playlists(self):
+
+
+
 
 

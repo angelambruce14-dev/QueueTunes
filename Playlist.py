@@ -116,3 +116,5 @@ class Playlist:
             j += 1
 
         return merged_songs
+
+    #def search()
