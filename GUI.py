@@ -148,15 +148,6 @@ class MyApp:
         self.vw_button(frame, "View Playlists", self.view_playlists).pack(pady=6)
         self.vw_button(frame, "Now Playing", self.show_now_playing).pack(pady=6)
 
-        self.vw_button(
-            frame,
-            "Load Playlists",
-            lambda: [
-                self.manager.load_from_file(),
-                setattr(self, 'current_playlist', None),
-                self.view_playlists()
-            ],
-        ).pack(pady=6)
 
         self.vw_button(frame, "Quit", self.on_exit).pack(pady=20)
 
@@ -227,6 +218,34 @@ class MyApp:
 
         self.vw_button(frame, "Play Playlist", play_playlist).pack(pady=5)
         self.vw_button(frame, "Open Playlist", open_selected).pack(pady=5)
+
+        def delete_selected_playlist():
+            if not listbox.curselection():
+                messagebox.showinfo("", "Select a playlist to delete.")
+                return
+
+            name = listbox.get(listbox.curselection()[0])
+
+            confirm = messagebox.askyesno(
+                "Delete Playlist",
+                f"Are you sure you want to delete '{name}'?\nThis cannot be undone."
+            )
+
+            if not confirm:
+                return
+
+            # Remove playlist from manager
+            del self.manager.playlists[name]
+            self.manager.save_to_file()
+
+            # Refresh listbox
+            listbox.delete(0, tk.END)
+            for pname in self.manager.get_all_playlists():
+                listbox.insert(tk.END, pname)
+
+            messagebox.showinfo("", f"Deleted playlist '{name}'.")
+
+        self.vw_button(frame, "Delete Playlist", delete_selected_playlist).pack(pady=5)
         self.vw_button(frame, "Back", self.show_main_menu).pack(pady=15)
 
         self.switch_frame(frame)
